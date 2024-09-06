@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .layout-header {
     position:sticky;
     top:0;
@@ -9,11 +16,19 @@
     width: 100%;
     padding: 2rem;
     color: var(--white);
+    background: -webkit-gradient(linear,right top, left bottom,from(var(--yellow)),color-stop(var(--blue)),to(red));
+    background: -o-linear-gradient(top right,var(--yellow),var(--blue),red);
     background: linear-gradient(to bottom left,var(--yellow),var(--blue),red);
     font-size: 1.5rem;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .hero .text-content > * {
@@ -28,9 +43,15 @@
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     gap: .5rem;
 }
 
@@ -40,12 +61,21 @@
 }
 
 .hero .cta:hover .arrow {
-    animation: shake .6s ease-out infinite alternate;
+    -webkit-animation: shake .6s ease-out infinite alternate;
+            animation: shake .6s ease-out infinite alternate;
+}
+
+@-webkit-keyframes shake {
+    to {
+        -webkit-transform: translateX(10px);
+                transform: translateX(10px);
+    }
 }
 
 @keyframes shake {
     to {
-        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+                transform: translateX(10px);
     }
 }
 
@@ -62,6 +92,8 @@
 }
 
 section {
+    height:-webkit-fit-content;
+    height:-moz-fit-content;
     height:fit-content;
     width:100%;
     padding: 1rem 2rem;
@@ -79,13 +111,19 @@ section h1 {
 
 .last-posts {
     background-color: var(--black);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 
 .last-posts .cards-container {
+    display:-ms-grid;
     display:grid;
+    -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr;
     grid-template-columns: repeat(3,1fr);
-    align-items: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
     gap:2rem;
     padding: 1rem;
     min-height: 50vh;
@@ -95,6 +133,7 @@ section h1 {
 
 @media only all and (max-width:1024px) {
     .last-posts .cards-container {
+        -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2,1fr);
     }
 
@@ -119,9 +158,16 @@ section h1 {
 
     .last-posts .cards-container {
         padding: 1rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: stretch;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: stretch;
+            -ms-flex-align: stretch;
+                align-items: stretch;
         gap: 1rem;
     }
 

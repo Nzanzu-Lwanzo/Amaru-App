@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
   --white: #fafafaff;
   --blue: #19a0f9ff;
@@ -15,7 +22,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: none;
   outline: none;
 }
@@ -34,13 +42,16 @@ body {
 }
 
 svg {
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
 }
 
 img {
   max-width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .bk-message {
@@ -56,42 +67,70 @@ img {
 }
 
 .glow-text {
+  background: -webkit-gradient(linear, right top, left bottom, from(var(--yellow)), color-stop(var(--blue)), to(red));
+  background: -o-linear-gradient(top right, var(--yellow), var(--blue), red);
   background: linear-gradient(to bottom left, var(--yellow), var(--blue), red);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
   font-weight: bold;
 }
 
-@keyframes move {
+@-webkit-keyframes move {
   from {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   to {
-    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+
+@keyframes move {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
   }
 }
 
 .loader-container {
   background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100%;
   width: 100%;
 }
 
 .loader {
   border-radius: 50%;
-  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -102,9 +141,17 @@ img {
   padding: 2rem;
   height: 60px;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: var(--black);
 }
 
@@ -121,10 +168,18 @@ img {
 }
 
 .layout-header nav {
+  -webkit-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   gap: 0.6rem;
   width: 100%;
 }
@@ -132,6 +187,8 @@ img {
 .layout-header button {
   background-color: transparent;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -141,6 +198,8 @@ img {
   border: 1px solid #fff;
   color: var(--black);
   border-radius: 25px;
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   text-decoration: none;
 }
@@ -156,16 +215,28 @@ img {
   height: 40px;
   max-width: 300px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   gap: 0.5rem; /* SAME  VALUE AS BELOW */
 }
 
 .layout-header .search-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   gap: 0.5rem; /* SAME  VALUE AS ABOVE */
   height: 100%;
   border: 0.5px solid grey;
@@ -207,11 +278,18 @@ img {
   bottom: 0;
   right: 0;
   z-index: 3;
-  box-shadow: 1px 1px 8px 1px #000;
+  -webkit-box-shadow: 1px 1px 8px 1px #000;
+          box-shadow: 1px 1px 8px 1px #000;
   overflow: auto;
+  -webkit-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 
-  transform: translateY(80%);
+  -webkit-transform: translateY(80%);
+
+      -ms-transform: translateY(80%);
+
+          transform: translateY(80%);
   opacity: 0;
   pointer-events: none;
 }
@@ -237,9 +315,15 @@ img {
 
 .layout-header .results .mobile-search-box .hints {
   font-size: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 0.4rem;
   margin-top: 0.6rem;
 }
@@ -257,16 +341,27 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .layout-header .results.show-results {
-  transform: initial;
+  -webkit-transform: initial;
+      -ms-transform: initial;
+          transform: initial;
   opacity: 1;
   pointer-events: all;
 }
 
 .layout-header .results ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
 }
 
@@ -305,15 +400,26 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 /* REUSABLE CLASSES */
 
 .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cell-blue {
   background-color: rgba(25, 160, 249, 0.1);
   color: var(--blue);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   border-radius: 25px;
 }
@@ -326,6 +432,8 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 .cell-yellow {
   background-color: rgba(255, 199, 0, 0.1);
   color: var(--yellow);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   border-radius: 25px;
 }
@@ -338,6 +446,8 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 .cell-red {
   background-color: rgba(255, 0, 0, 0.1);
   color: var(--red);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   border-radius: 25px;
 }
@@ -353,9 +463,15 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .post-card .asker {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 0.5rem;
 }
 
@@ -366,10 +482,19 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 
 .post-card .content {
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
 }
 
@@ -402,6 +527,8 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
   border: 0.5px solid var(--black);
   color: var(--black);
   background-color: transparent;
+  -webkit-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   text-decoration: none;
   border-radius: 3px;
@@ -414,10 +541,16 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .post-card .stats-n-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.5rem;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .post-card .stats-n-actions .circle-btn {
@@ -447,10 +580,18 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
   border-radius: 25px;
   padding: 0.2rem 0.4rem;
   background-color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 0.2rem;
   font-size: 0.7rem;
   cursor: pointer;
@@ -466,12 +607,22 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.5rem;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
@@ -507,9 +658,14 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .layout-footer .links-social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   gap: 0.5rem;
   margin-top: 0.2rem;
 }
@@ -519,11 +675,15 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
   width: 30px;
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
 
 .link-social-media:hover {
-  transform: rotateZ(360deg);
+  -webkit-transform: rotateZ(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotateZ(360deg);
 }
 
 .fb {
@@ -540,6 +700,7 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .insta {
+  background: -o-linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
 }
 
@@ -557,15 +718,25 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 }
 
 .avatars-chain {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0;
 }
 
 .avatars-chain .avatar {
   border-radius: 50%;
+  background: -webkit-gradient(linear, right top, left bottom, from(var(--yellow)), color-stop(var(--blue)), to(red));
+  background: -o-linear-gradient(top right, var(--yellow), var(--blue), red);
   background: linear-gradient(to bottom left, var(--yellow), var(--blue), red);
+  -webkit-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   cursor: pointer;
 }
@@ -781,6 +952,8 @@ tr:not(:has(th)):hover {
   }
 
   .layout-header .search-button-on-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; /* 
                         Flex because the button has got the .center class
                         that centers an element using display flex
@@ -799,14 +972,21 @@ tr:not(:has(th)):hover {
     height: 100%;
     border-radius: 0;
     top: 55px;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 
-    transform: translate(100%, 0);
+    -webkit-transform: translate(100%, 0);
+
+        -ms-transform: translate(100%, 0);
+
+            transform: translate(100%, 0);
     opacity: 1;
   }
 
   .layout-header .results.show-results {
-    transform: initial;
+    -webkit-transform: initial;
+        -ms-transform: initial;
+            transform: initial;
   }
 
   .layout-header .results .mobile-search-box {
