@@ -1,0 +1,21 @@
+{% extends 'account/parents/accountForm.html' %}
+
+{% block title %}
+  Update Account
+{% endblock %}
+
+{% block form_elt %}
+  <form action="{% url 'account:update-account' request.user.id %}" method="POST" class="card">
+        {% csrf_token %}
+    <h1>Reservé aux administrateurs</h1>
+    {% if messages %}
+    {% for message in messages %}
+      <span href="bk-message">{{ message }}</span>
+    {% endfor %}
+    {% endif %}
+
+    {{ form }}
+    
+    <button type="submit" class="btn">Update</button>
+  </form>
+{% endblock %}

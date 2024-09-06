@@ -1,0 +1,72 @@
+<div class="search-box-container">
+  <div class="search-box">
+    <input
+      type="search"
+      name="search-input"
+      id="search-input"
+      placeholder="Cherchez des posts"
+      autocomplete="off"
+    />
+
+    <button type="button" class="center search-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="25"
+        fill="#FFF"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <button type="button" class="center search-button search-button-on-mobile">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="25"
+      height="25"
+      fill="#FFF"
+      viewBox="0 0 256 256"
+    >
+      <path
+        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+      ></path>
+    </svg>
+  </button>
+
+  <div class="results" id="results">
+    <div class="mobile-search-box">
+      <input
+        type="search"
+        name="search-input"
+        id="mobile-search-input"
+        placeholder="Search posts"
+      />
+      <div class="hints">
+        <span class="hint">last posts</span>
+        <span class="hint">tendance</span>
+        <span class="hint">old posts</span>
+        <span class="hint">love</span>
+      </div>
+    </div>
+    <ul>
+      {% for post in search_data %}
+        <li class="filterable-element">
+          <a href="{{ post.url }}">
+            <span class="filterable-content">
+              {{ post.title }}
+            </span>
+            <span>
+              {% for tag in post.tags %}
+                #{{tag}}
+              {% endfor %}
+            </span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,166 @@
+.layout-header {
+    position:sticky;
+    top:0;
+    z-index: 2;
+}
+
+.hero {
+    min-height: 40vh;
+    width: 100%;
+    padding: 2rem;
+    color: var(--white);
+    background: linear-gradient(to bottom left,var(--yellow),var(--blue),red);
+    font-size: 1.5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero .text-content > * {
+    margin-bottom: .8rem;
+}
+
+.hero .cta {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+
+.cta  a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.hero .cta:hover .arrow {
+    animation: shake .6s ease-out infinite alternate;
+}
+
+@keyframes shake {
+    to {
+        transform: translateX(10px);
+    }
+}
+
+.imp-b-yl {
+    color: var(--yellow);
+}
+
+.imp-b-bl {
+    color: var(--blue);
+}
+
+.imp-b-red {
+    color: red;
+}
+
+section {
+    height:fit-content;
+    width:100%;
+    padding: 1rem 2rem;
+}
+
+section.top-bar {
+    width : 100%;
+    height : 30%;
+}
+
+section h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.last-posts {
+    background-color: var(--black);
+    height: fit-content;
+}
+
+.last-posts .cards-container {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: start;
+    gap:2rem;
+    padding: 1rem;
+    min-height: 50vh;
+}
+
+/* MEDIA QUERIES */
+
+@media only all and (max-width:1024px) {
+    .last-posts .cards-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .last-posts .cards-container .post-card:last-of-type {
+        display:none;
+    }
+}
+
+@media only all and (max-width:800px) {
+
+    .hero {
+        font-size : 1.3rem;
+    }
+
+    .hero .cta {
+        font-size:.8rem;
+    }
+
+    section:not(.hero) {
+        padding-inline: 1rem;
+    }
+
+    .last-posts .cards-container {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .last-posts .cards-container .post-card:last-of-type {
+        display:initial;
+    }
+}
+
+@media only all and (max-width:375px) {
+    .hero {
+        font-size : 1rem;
+        padding-inline: 1rem;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .hero p {
+        line-height: 1.5rem;
+    }
+
+    .hero .cta {
+        font-size:.8rem;
+    }
+
+    section {
+        padding:1rem;
+    }
+
+    .last-posts .cards-container {
+        padding-inline: 0;
+    }
+
+    .post-card .content .card-link {
+        font-size: .8rem;
+    }
+
+    .post-card .tag {
+        font-size: .65rem;
+    }
+}

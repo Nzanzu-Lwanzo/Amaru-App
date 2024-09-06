@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    
+    <style>
+      :root {
+        --white: #fafafaff;
+        --blue: #19a0f9ff;
+        --yellow: #ffc700ff;
+        --red: red;
+        --black: #0f0f0f;
+        --px: 2rem;
+        --py: 1rem;
+        --pad: 1rem 2rem;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      html {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bk-message {
+        font-size: .8rem;
+        color: red;
+      }
+
+      .card {
+        width: 500px;
+      }
+
+      .card > * {
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--blue);
+      }
+
+            
+        form {
+            height: 100%;
+            width: 700px;
+            background-color: #FFF;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .wrap-inputs,
+        div:has(label[for^="id"]),
+        div:has(input[id^="id"]) {
+            width: 100%;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: .5rem;
+            flex-direction: column;
+        }
+
+        .wrap-inputs input,
+        .wrap-inputs textarea,
+        div:has(label[for^="id"]) input,
+        div:has(label[for^="id"]) textarea,
+        div:has(input[id^="id"]) input,
+        div:has(input[id^="id"]) textarea {
+            border: 2px solid var(--black);
+            border-radius: 4px;
+            padding: .5rem;
+            color: var(--black);
+            width: 100%;
+            resize: none;
+            font-size: 1rem;
+        }
+
+        div[id$="helptext"] {
+          display:none;
+        }
+
+        .btn {
+            text-decoration: none;
+            background-color: var(--black);
+            padding: 1rem;
+            color: #fff;
+            border-radius: 4px;
+            font-size: .8rem !important;
+        }
+
+      @media only all and (max-width: 600px) {
+        .card {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% block form_elt %}
+    {% endblock %}
+    <script>
+      // Hide the messages
+      setTimeout(()=>{
+        document.querySelector(".bk-message")?.remove()
+      },5000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+
+    <style>
+      :root {
+        --white: #fafafaff;
+        --blue: #19a0f9ff;
+        --yellow: #ffc700ff;
+        --red: red;
+        --black: #0f0f0f;
+        --px: 2rem;
+        --py: 1rem;
+        --pad: 1rem 2rem;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      html {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        width: 500px;
+      }
+
+      .card > * {
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--blue);
+      }
+
+      .btn {
+        text-decoration: none;
+        background-color: var(--black);
+        padding: 1rem;
+        color: #fff;
+        border-radius: 4px;
+      }
+
+      @media only all and (max-width: 600px) {
+        .card {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>{% block error_name %} {% endblock %}</h1>
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% else %}
+        <p>{% block message %} {% endblock %}</p>
+      {% endif %}
+      <a href="{% url 'stdln:home' %}" class="btn">Accueil</a>
+    </div>
+  </body>
+</html>

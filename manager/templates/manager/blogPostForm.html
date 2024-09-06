@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create|Update Post</title>
+
+    {{ form.media }}
+    <link rel="stylesheet" href="{% static 'manager/css/blogPostForm.css' %}" />
+  </head>
+  <body>
+    <form action="{% url 'manager:new-post' %}" method="post" id="post-form">
+      {% csrf_token %}
+      <h1>Post Form</h1>
+      <!-- <div class="wrap-input">
+            <label for="title">Titre du post</label>
+            <textarea name="title" id="title" maxlength="200"></textarea>
+        </div>
+
+        <div class="wrap-input">
+            <label for="tags">Tags du post</label>
+            <input type="text" name="tags" id="tags" maxlength="200">
+        </div>
+
+        <div class="wrap-input">
+            {{ form }}
+        </div> -->
+
+      {{ form }}
+
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+  </body>
+</html>
