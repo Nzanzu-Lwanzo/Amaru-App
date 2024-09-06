@@ -288,7 +288,16 @@ aside .post-card .content .card-link {
     font-size: .9rem;
     line-height: 1.3rem;
 
-    box-shadow: 1px 1px 6px 1px var(--black);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: .5s ease-out;
+    pointer-events: none;
+  }
+
+  .article-read {
+    transform: none;
+    pointer-events: all;
+    opacity: 1;
   }
 
   article header {
