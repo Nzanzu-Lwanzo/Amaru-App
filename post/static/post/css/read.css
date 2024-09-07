@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 #post-body {
   min-height: 100vh;
   width: 100%;
@@ -21,6 +14,10 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+}
+
+p[data-f-id="pbf"] {
+  display : none;
 }
 
 article {

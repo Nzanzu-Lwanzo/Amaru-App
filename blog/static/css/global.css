@@ -927,6 +927,7 @@ tr:not(:has(th)):hover {
   background-color: #f7fafb !important;
 }
 
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);

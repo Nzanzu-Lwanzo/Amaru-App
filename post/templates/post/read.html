@@ -7,6 +7,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{ post.title }}" />
   <meta property="og:description" content="{{ post.content|truncatewords:20}}"/>
+  <meta property="og:image" content="{% static 'imgs/logo-big.png' %}" />
 {% endblock %}
 
 {% block style %}
@@ -54,7 +55,7 @@
           I'm <strong>NZANZU MUHAYRWA L.</strong>, a
           <strong>web developper</strong> and <strong>writer</strong> from
           Lubumbashi, DRC ! <br />
-          I'm love <strong>programming</strong>,
+          I love <strong>programming</strong>,
           <strong>music</strong> (especially rap),
           <strong>hip hop culture</strong>, <strong>languages</strong> ,
           <strong>weapons and guns</strong> and <strong>reading</strong>. I've
@@ -105,7 +106,7 @@
               </svg>
             </span>
             <span class="label"
-              >Upvote :
+              >J'aime :
               <span class="count-upvotes">{{post.upvotes}}</span></span
             >
           </button>
