@@ -367,10 +367,11 @@ html:has(.results.show-results) && .search-button-on-mobile:focus-visible {
 
 .layout-header .results ul a {
   display: inline-block;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem .8rem;
   font-size: 0.8rem;
   color: #fff;
   width: 100%;
+  border-bottom: .5px solid grey;
 }
 
 .layout-header .results ul li:first-of-type a {
