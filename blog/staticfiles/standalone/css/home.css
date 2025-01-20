@@ -136,10 +136,6 @@ section h1 {
         -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2,1fr);
     }
-
-    .last-posts .cards-container .post-card:last-of-type {
-        display:none;
-    }
 }
 
 @media only all and (max-width:800px) {
@@ -169,10 +165,6 @@ section h1 {
             -ms-flex-align: stretch;
                 align-items: stretch;
         gap: 1rem;
-    }
-
-    .last-posts .cards-container .post-card:last-of-type {
-        display:initial;
     }
 }
 

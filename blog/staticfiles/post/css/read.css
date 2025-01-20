@@ -49,6 +49,11 @@ article .tags {
 article #content {
   padding: 2rem;
   padding-bottom: 0;
+  line-height: 2.3rem;
+
+  & > * {
+    margin-block: .2rem;
+  }
 }
 
 article p,
@@ -229,6 +234,9 @@ aside {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+
+  position: sticky;
+  top: 2rem;
 }
 
 aside .post-card .content .card-link {
