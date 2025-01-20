@@ -21,6 +21,10 @@
   <script async src="{% static 'post/js/read.js' %}" defer></script>
 {% endblock %}
 
+{% block title %}
+<title>{{ post.title }}</title>
+{% endblock title %}
+
 {% block content %}
 <div id="post-body">
   <article>

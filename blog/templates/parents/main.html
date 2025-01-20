@@ -6,7 +6,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="NZANZU MUHAYRWA L., web dev" />
-    {% block meta %} {% endblock %}
+    {% block meta %}
+    {% endblock %}
     {% include 'fragments/loadressources.html'%}
     <link rel="stylesheet" href="{% static 'css/global.css' %}" />
     <!-- Additive stylesheets -->
@@ -18,6 +19,10 @@
     <!-- Additive scripts -->
     {% block jsScripts %}
     {% endblock %}
+
+    {% block title %}
+    <title>Amaru Blog</title>
+    {% endblock title %}
   </head>
   <body id="delegate-actions-from-this-element">
     {% csrf_token %}

@@ -6,7 +6,7 @@ from django.urls import reverse
     
 class Post(models.Model):
     
-    title = models.CharField("Titre",max_length=200,null=False,blank=False)
+    title = models.CharField("Titre",max_length=200,null=False,blank=False) # Mandatory
     slug = models.SlugField('Slug',max_length=400,blank=True,null=False,unique=True,editable=False)
     tags = models.CharField("Tags",max_length=200,null=True)
     content = FroalaField()
